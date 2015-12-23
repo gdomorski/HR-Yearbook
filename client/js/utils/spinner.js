@@ -24,4 +24,4 @@ var spinnerInit = function () {
 
 var spinnerRemove = function() {
   $('#loading-image').remove();
-}
+};

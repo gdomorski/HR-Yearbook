@@ -1,7 +1,8 @@
 var app = new AppView({
-  router: new AppRouter(),
-  navbar: new NavBarView(),
+	collection: new Students(),
+	router: new AppRouter(),
 });
 
+
 // http://backbonejs.org/#History
-Backbone.history.start()
+Backbone.history.start();

@@ -1,19 +1,16 @@
-var AppView = Backbone.View.extend({
+  var AppView = Backbone.View.extend({
 
   el: '#app-container',
 
   initialize: function(options) {
-
-    options.router.on('route:landing', function() {
-      console.log('Hit landing Route')
-    }.bind(this));
-
+    this.profiles = new StudentsView({ collection: this.collection });
+    this.hrLogo = new NavBarView({collection: this.collection});
+    this.render();
   },
 
-  renderCohort: function(cohort) {
+  render: function(){
+    this.$el.html([this.hrLogo.$el, this.profiles.$el]);
+    return this;
   },
 
-  renderLanding: function() {
-    $('#page-content-container').html(new LandingView().render());   
-  }
-})
+});

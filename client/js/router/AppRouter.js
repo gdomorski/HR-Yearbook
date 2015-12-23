@@ -1,12 +1,19 @@
-// http://backbonejs.org/#Router
+var vent = _.extend({}, Backbone.Events);
+
 var AppRouter = Backbone.Router.extend({
 
   routes: {
-    '': 'landing',
+    '': '',
+    '36': 'showCohort36',
+    '37': 'showCohort37',
   },
 
-  landing: function() {
-
+  showCohort36: function(){
+  	vent.trigger('showNewCohort', '36');
   },
+
+  showCohort37: function(){
+  	vent.trigger('showNewCohort', '37');
+  }
 
 });
